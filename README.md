@@ -24,7 +24,7 @@
 
 ## Setup
 
-1. Clone the repository
+1. Clone or download the repository
 
 ## Usage
 
