@@ -1,7 +1,7 @@
 <div align="center">
   <h1>Embed my Python</h1>
 
-  <blockquote>This project aims to simplify the process of setting up a Python environment with specific versions and dependencies across various operating systems.</blockquote>
+  <blockquote>Simplify the process of setting up a Python environment with specific versions and dependencies across various operating systems.</blockquote>
 
   <img src="resources/logo.jpg" title="Embed my Python logo" />
 </div>
