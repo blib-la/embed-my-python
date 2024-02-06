@@ -10,10 +10,16 @@
 
 ## Table of Contents
 
+<!-- toc -->
+
 - [Features](#features)
 - [Setup](#setup)
 - [Usage](#usage)
+  - [Windows](#windows)
+- [CLI Parameters](#cli-parameters)
 - [Feedback](#feedback)
+
+<!-- tocstop -->
 
 ## Features
 
@@ -32,13 +38,19 @@
 
 1. Open PowerShell.
 2. Navigate to the `embed-my-python` folder.
-3. Execute the script using optional parameters for the Python version (`-v`) and the path to your requirements file (`-r`):
+3. Execute the script using optional [CLI parameters](#cli-parameters):
 
    ```powershell
-   .\embed-my-python-win.ps1 -v 3.10.9 -r .\requirements.txt -d .\python-embedded
+   .\embed-my-python-win.ps1 -v 3.10.9 -r D:\dev\myproject\requirements.txt -d D:\dev\myproject\python-embedded
    ```
 
-_Default settings_: Uses Python `3.10.9`, searches for `requirements.txt` in the same directory as the `embed-my-python-win.ps1` script and puts everything into the `python-embedded`-folder.
+## CLI Parameters
+
+| Option | Description                                                                 | Default Value        |
+| ------ | --------------------------------------------------------------------------- | -------------------- |
+| `-v`   | Specify the Python version to use for the embedded environment.             | `3.10.9`             |
+| `-r`   | Path to the `requirements.txt` file with the necessary Python packages.     | `.\requirements.txt` |
+| `-d`   | Destination directory where the embedded Python environment will be set up. | `.\python-embedded`  |
 
 ## Feedback
 
