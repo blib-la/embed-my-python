@@ -35,10 +35,10 @@
 3. Execute the script using optional parameters for the Python version (`-v`) and the path to your requirements file (`-r`):
 
    ```powershell
-   .\embedmypython-win.ps1 -v 3.10.9 -r .\requirements.txt
+   .\embed-my-python-win.ps1 -v 3.10.9 -r .\requirements.txt -d .\python-embedded
    ```
 
-_Default settings_: Uses Python `3.10.9` and searches for `requirements.txt` in the same directory as the `embedmypython-win.ps1` script.
+_Default settings_: Uses Python `3.10.9`, searches for `requirements.txt` in the same directory as the `embed-my-python-win.ps1` script and puts everything into the `python-embedded`-folder.
 
 ## Feedback
 

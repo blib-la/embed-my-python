@@ -1,4 +1,6 @@
 python_embedded
+python-embedded
 .DS_Store
-python_embedded.zip
+python_embedded-*.zip
 requirements.txt
+*.py
