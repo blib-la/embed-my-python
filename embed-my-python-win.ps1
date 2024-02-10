@@ -1,7 +1,8 @@
 param(
     [string]$v = "3.10.9",
     [string]$r = ".\requirements.txt",
-    [string]$d = ".\python-embedded"
+    [string]$d = ".\python-embedded",
+    [string]$a
 )
 
 $pythonVersion = $v
@@ -34,11 +35,36 @@ if (-Not (Test-Path $pipPath)) {
 # Install pip
 & $pythonExePath $pipPath
 
-# Find the _pth file and uncomment "import site"
+
+# Find the _pth file and read its content
 $pthFile = Get-ChildItem -Path $pythonEmbeddedPath -Filter "python*._pth"
-$content = Get-Content $pthFile.FullName
-$content = $content -replace '#import site', 'import site'
-$content | Set-Content $pthFile.FullName
+$contentLines = Get-Content $pthFile.FullName
+
+# Initialize an empty list to hold the new content, excluding 'import site' lines
+$newContent = @()
+
+foreach ($line in $contentLines) {
+    # Exclude lines that are exactly 'import site' or '#import site' (with optional whitespace)
+    if (-not ($line -match '^\s*#?import site\s*$')) {
+        $newContent += $line
+    }
+}
+
+# Always add 'import site' at the end of the new content
+$newContent += 'import site'
+
+# If an additional path is provided and not already in the content, add it before 'import site'
+if ($a -and -not ($newContent -contains $a)) {
+    $newContent += $a
+}
+
+# Write the updated content back to the .pth file
+$newContent | Set-Content $pthFile.FullName
+
+
+
+
+
 
 # Install requirements from requirements.txt
 if (Test-Path $requirementsPath) {

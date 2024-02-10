@@ -46,11 +46,12 @@
 
 ## CLI Parameters
 
-| Option | Description                                                                 | Default Value        |
-| ------ | --------------------------------------------------------------------------- | -------------------- |
-| `-v`   | Specify the Python version to use for the embedded environment.             | `3.10.9`             |
-| `-r`   | Path to the `requirements.txt` file with the necessary Python packages.     | `.\requirements.txt` |
-| `-d`   | Destination directory where the embedded Python environment will be set up. | `.\python-embedded`  |
+| Option | Description                                                                                                                                  | Default Value        |
+| ------ | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- |
+| `-v`   | Specify the Python version to use for the embedded environment.                                                                              | `3.10.9`             |
+| `-r`   | Path to the `requirements.txt` file with the necessary Python packages.                                                                      | `.\requirements.txt` |
+| `-d`   | Destination directory where the embedded Python environment will be set up.                                                                  | `.\python-embedded`  |
+| `-a`   | Additional path to be added to the Python environment's `.pth` file. This can be useful for including extra directories in the `PYTHONPATH`. | _None_               |
 
 ## Feedback
 
